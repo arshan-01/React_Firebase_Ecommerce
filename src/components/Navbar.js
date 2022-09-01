@@ -48,13 +48,20 @@ function Navbar() {
     </div>
    
     <div className="d-flex align-items-center">
+    <div class="input-group rounded">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+</div>
      
       <Link className="text-reset me-3" to="#">
         <i className="fas fa-shopping-cart"></i>
+        <span className="badge rounded-pill badge-notification bg-danger">1</span>
       </Link>
 
       
-      <div className="dropdown">
+      {/* <div className="dropdown">
         <Link
           className="text-reset me-3 dropdown-toggle hidden-arrow"
           to="#"
@@ -113,7 +120,7 @@ function Navbar() {
             <Link className="dropdown-item" to="#">Logout</Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
     
   </div>
