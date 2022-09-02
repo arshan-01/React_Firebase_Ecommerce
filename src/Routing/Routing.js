@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import About from '../Pages/About';
 
 
-import Cart from '../Pages/Cart';
+import CartPage from '../Pages/Cart/Cart';
 import Contact from '../Pages/Contact';
 
 import ErrorPage from '../Pages/ErrorPage';
@@ -18,7 +18,7 @@ function Routing() {
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About/>} />
       <Route path="/contact" element={<Contact/>} />
-      <Route path='/cart' element={<Cart/>} />
+      <Route path='/cart' element={<CartPage/>} />
       <Route path='*' element={<ErrorPage/>} />
     </Routes>
   </div>

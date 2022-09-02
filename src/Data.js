@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    title: "Fjallraven - Foldsack No. 1 Backpack",
+    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.95,
     description:
       "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
@@ -22,7 +22,7 @@ const data = [
   },
   {
     id: 3,
-    title: "Mens Cotton Jacket Premium Slim",
+    title: "Mens Cotton Jacket,outerwear jackets for Spring/Autumn/Winter",
     price: 55.99,
     description:
       "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
@@ -32,7 +32,7 @@ const data = [
   },
   {
     id: 4,
-    title: "Mens Casual Slim Fit Premium",
+    title: "Mens choice No.1 Casual Slim Fit",
     price: 15.99,
     description:
       "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
@@ -43,7 +43,7 @@ const data = [
   {
     id: 5,
     title:
-      "Gold & Silver Dragon Station Chain Bracelet",
+      "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     price: 695,
     description:
       "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
@@ -63,7 +63,7 @@ const data = [
   },
   {
     id: 7,
-    title: "Women's No.1 Choice White Gold Plated Princess",
+    title: "White Gold Plated Princess",
     price: 9.99,
     description:
       "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
@@ -93,7 +93,7 @@ const data = [
   },
   {
     id: 10,
-    title: "SanDisk SSD PLUS 1 Tera Byte Internal SSD Best Performance Boost - SATA III 6 Gb/s",
+    title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     price: 109,
     description:
       "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
@@ -125,7 +125,7 @@ const data = [
   },
   {
     id: 13,
-    title: "Acer SB220Q bi 21.5 Inches Full HD (1920 x 1080) IPS Ultra-Thin Zero Frame Monitor (HDMI & VGA Port),widescreen IPS display, Black",
+    title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     price: 599,
     description:
       "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
@@ -146,7 +146,7 @@ const data = [
   },
   {
     id: 15,
-    title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats ,The Jackets is US standard size,100% Polyester; Detachable Liner",
+    title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
       "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
@@ -157,7 +157,7 @@ const data = [
   {
     id: 16,
     title:
-      "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket,100% POLYURETHANE(shell)",
+      "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
     description:
       "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
@@ -167,7 +167,7 @@ const data = [
   },
   {
     id: 17,
-    title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats,Long sleeve with hooded,Lightweight ",
+    title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     price: 39.99,
     description:
       "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
@@ -177,7 +177,7 @@ const data = [
   },
   {
     id: 18,
-    title: "MBJ Women's Solid Short Sleeve Boat Neck V,95% RAYON 5% SPANDEX,Lightweight fabric ",
+    title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
     price: 9.85,
     description:
       "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",

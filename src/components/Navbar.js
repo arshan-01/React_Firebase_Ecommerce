@@ -1,11 +1,17 @@
 import React from 'react'
+import {  useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import ShopLogo from '../assets/ShopLogo.png'
+
 function Navbar() {
+
+
+  let cartData = useSelector((state)=>state.CartReducer.cart);
+ 
+
   return (
     <div>
-      
-<nav className="navbar navbar-expand-lg navbar-light bg-light ">
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
 
   <div className="container">
     
@@ -55,9 +61,13 @@ function Navbar() {
   </span>
 </div>
      
-      <Link className="text-reset me-3" to="#">
+      <Link className="text-reset me-3" to="/cart">
         <i className="fas fa-shopping-cart"></i>
-        <span className="badge rounded-pill badge-notification bg-danger">1</span>
+        {
+          cartData.length>= 1? 
+        <span className="badge rounded-pill badge-notification bg-danger">{cartData.length}</span> : <span className="badge rounded-pill badge-notification bg-danger"></span>
+        }
+
       </Link>
 
       

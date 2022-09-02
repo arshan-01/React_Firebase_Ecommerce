@@ -8,6 +8,7 @@
 }
 
 
+
 body
 {
     font-family: 'Roboto', sans-serif;
@@ -18,7 +19,7 @@ a
 }
 .card {
     
-    height: 100%;
+    /* height: 90%; */
     box-shadow: 0 2px 7px #dfdfdf;
     background: #fafafa;
 }
@@ -70,6 +71,12 @@ a
     color: #363636;
     text-decoration: none;
     transition: 0.3s;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow : ellipsis;
+    display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
 }
 
 .product-details h4 a:hover {
