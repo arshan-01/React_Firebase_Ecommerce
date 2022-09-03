@@ -1,12 +1,14 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
+import { REMOVE } from '../../Redux/actions/Action';
+
 import "./cart.css"
 
 function CartPage() {
   let cartData = useSelector((state)=>state.CartReducer.cart);
   console.log(cartData)
-
+  const dispatch = useDispatch()
   return (
    
 <section class="h-100 gradient-custom">
@@ -41,9 +43,9 @@ function CartPage() {
                     <p><strong>{prod.title}</strong></p>
                     <p>Color: blue</p>
                     <p>Size: M</p>
-                    <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                    <button onClick={()=> dispatch(REMOVE(prod.id))} type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                       title="Remove item">
-                      <i class="fas fa-trash"></i>
+                      <i  class="fas fa-trash"></i>
                     </button>
                     <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
                       title="Move to the wish list">
@@ -119,15 +121,11 @@ function CartPage() {
                 <img class="me-2" width="45px"
                   src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                   alt="Visa" />
-                <img class="me-2" width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                  alt="American Express" />
+               
                 <img class="me-2" width="45px"
                   src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
                   alt="Mastercard" />
-                <img class="me-2" width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
-                  alt="PayPal acceptance mark" />
+               
               </div>
             </div>
           </div>

@@ -1,12 +1,13 @@
-import React,{ useState } from 'react'
-import { useDispatch } from 'react-redux'
+
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Data from '../../Data'
 import { ADD } from '../../Redux/actions/Action'
 import "./ProductCard.css"
 
 function ProductCard() {
-  const [products,setproducts] = useState(Data)
+  let products = useSelector((state)=>state.CartReducer.products);
+  // console.log(products)
+
    const dispatch = useDispatch()
   
   return (
@@ -16,10 +17,10 @@ function ProductCard() {
       products.map((prod)=>{
         
         return <div class=' col-12 col-sm-6 col-md-4 ' key={prod.id}>
-              <div class="card mt-5">
+        <div class="card mt-5">
                 <div class="card-badge">Hot</div>
                 <div class="product-tumb">
-                  <img src={prod.image} alt=""/>
+                <Link to={`/ProductDetail/${prod.id}`}> <img className='product-tumb img' src={prod.image} alt=""/></Link> 
                 </div>
                 <div class="product-details">
                   <span class="product-catagory">{prod.category}</span>
@@ -35,8 +36,8 @@ function ProductCard() {
                 </div>
               </div>
                 </div>
+              
               </div>
-        
       })
     }
      

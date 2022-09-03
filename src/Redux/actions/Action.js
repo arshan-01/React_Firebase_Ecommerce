@@ -5,9 +5,10 @@ export const ADD = (products)=>{
             payload : products,
         }
 }
-export const REMOVE = (products)=>{
+export const REMOVE = (id)=>{
+    console.log(id)
         return {
             type : action.REMOVE_TO_CART,
-            payload : products,
+            payload : id,
         }
 }
