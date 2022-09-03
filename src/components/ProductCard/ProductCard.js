@@ -1,4 +1,4 @@
-
+import {  message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { ADD, REMOVE } from '../../Redux/actions/Action'
@@ -33,8 +33,16 @@ function ProductCard() {
                       <i class="fa fa-heart"></i>
                       {
                         cartData.some((p)=>p.id ===prod.id)? 
-                        <i onClick={()=> dispatch(REMOVE(prod.id))} class="fa fa-trash" style={{ color: "#fbb72c"}}></i>
-                         :  <i onClick={()=> dispatch(ADD(prod))} class="fa fa-shopping-cart"></i> 
+                        <i onClick={()=> 
+                          { dispatch(REMOVE(prod.id))
+                            message.success('Product removed from cart');
+                          }} class="fa fa-trash" style={{ color: "#fbb72c"}}></i>
+                         :  <i onClick={()=> 
+                         {dispatch(ADD(prod))
+                          message.success('Product added to cart');
+                         }
+
+                         } class="fa fa-shopping-cart"></i> 
                       }
                     
                     </div>
