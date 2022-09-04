@@ -80,13 +80,26 @@ function ProductDetail() {
                 </div>
               </div>
               <div class="buttons d-flex flex-row mt-5 gap-3">
-              <Link to="/cart" ><button onClick={()=> dispatch(ADD(data))} class="btn btn-outline-dark">Buy Now</button></Link>
+              {cartData.some((p)=>p.id ===data.id)?
+                <Link to="/cart" >
+              <button 
+              class="btn btn-outline-dark">Buy Now</button>
+              </Link>  
                 
+               : <Link to="/cart" >
+              <button onClick={()=> {
+                dispatch(ADD(data))
+                } }
+              class="btn btn-outline-dark">Buy Now</button>
+              </Link>
+
+              }
+            
 
                 {cartData.some((p)=>p.id ===data.id)?  
                 <button onClick={()=> 
                          {dispatch(REMOVE(data.id))
-                          message.success('Product removed form cart');
+                          message.success('Product removed from cart');
                          }
 
                          }  class="btn btn-dark">Remove</button>: <button onClick={()=> 

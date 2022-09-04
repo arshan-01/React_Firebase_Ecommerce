@@ -36,13 +36,15 @@ function ProductCard() {
                         <i title="Remove from cart" onClick={()=> 
                           { dispatch(REMOVE(prod.id))
                             message.success('Product removed from cart');
-                          }} class="fa fa-trash" style={{ color: "#fbb72c"}}></i>
-                         :  <i title="Add to cart" onClick={()=> 
+                          }} class="fa fa-shopping-cart" style={{ color: "#fbb72c"}}></i>
+                         :  
+                         <i title="Add to cart" onClick={()=> 
                          {dispatch(ADD(prod))
                           message.success('Product added to cart');
                          }
 
                          } class="fa fa-shopping-cart"></i> 
+                         
                         
                       }
                        
