@@ -32,7 +32,7 @@ const data = [
   },
   {
     id: 4,
-    title: "Mens choice No.1 Casual Slim Fit",
+    title: "Mens choice No.1 Casual Slim Fit / outerwear jackets for Spring",
     price: 15.99,
     description:
       "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
@@ -53,7 +53,7 @@ const data = [
   },
   {
     id: 6,
-    title: "Solid Gold Petite Micropave ",
+    title: "Women's Choice Solid Gold Petite Micropave ",
     price: 168,
     description:
       "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
@@ -63,7 +63,7 @@ const data = [
   },
   {
     id: 7,
-    title: "White Gold Plated Princess",
+    title: "White Gold Plated Princess , Wedding Engagement Solitaire Diamond Promise Ring",
     price: 9.99,
     description:
       "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",

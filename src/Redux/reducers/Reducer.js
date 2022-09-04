@@ -1,14 +1,16 @@
-import Data from "../../Data";
 import * as actions from "../actions/actionType"
-
-
 
 const InitialState = {
     cart : [],
-    products : Data,
+    products : [],
 }
 export const CartReducer = (state = InitialState, action)=>{
     switch (action.type) {
+        case actions.FETCH_PRODUCT:
+            return {
+                ...state,
+                products: action.payload,
+            };
         case actions.ADD_TO_CART:
             return {
                 ...state,

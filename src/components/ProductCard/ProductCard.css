@@ -65,6 +65,7 @@ a
 
 .product-details h4 a {
     font-weight: 500;
+    font-size: large;
     display: block;
     margin-bottom: 18px;
     text-transform: uppercase;

@@ -25,7 +25,7 @@ function ProductCard() {
                 </div>
                 <div class="product-details">
                   <span class="product-catagory">{prod.category}</span>
-                  <h4><Link to="">{prod.title}</Link></h4>
+                  <h4><Link to={`/ProductDetail/${prod.id}`}>{prod.title}</Link></h4>
                   {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p> */}
                   <div class="product-bottom-details col-12">
                     <div class="product-price "><small>$96.00</small>${prod.price}</div>
@@ -33,11 +33,11 @@ function ProductCard() {
                       <i class="fa fa-heart"></i>
                       {
                         cartData.some((p)=>p.id ===prod.id)? 
-                        <i onClick={()=> 
+                        <i title="Remove from cart" onClick={()=> 
                           { dispatch(REMOVE(prod.id))
                             message.success('Product removed from cart');
                           }} class="fa fa-trash" style={{ color: "#fbb72c"}}></i>
-                         :  <i onClick={()=> 
+                         :  <i title="Add to cart" onClick={()=> 
                          {dispatch(ADD(prod))
                           message.success('Product added to cart');
                          }
