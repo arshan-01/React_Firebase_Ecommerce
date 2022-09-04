@@ -43,8 +43,9 @@ function ProductCard() {
                          }
 
                          } class="fa fa-shopping-cart"></i> 
+                        
                       }
-                    
+                       
                     </div>
                 
                 </div>

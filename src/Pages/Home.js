@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'
 import ProductCard from '../components/ProductCard/ProductCard';
-import { Cart } from '../Redux/Context'
 
 // import Hero from '../components/Hero'
 

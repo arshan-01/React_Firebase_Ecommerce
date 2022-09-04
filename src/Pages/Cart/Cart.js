@@ -139,7 +139,7 @@ function CartPage() {
           </div>
         </div>
       </div>
-       : <div class="container-fluid  mt-5" style={{background : "white"}}>
+       : <div class="container-fluid  mt-5" style={{background : "#dee1e4"}}>
 				 <div class="row">
 				 
 					<div class="col-md-12">

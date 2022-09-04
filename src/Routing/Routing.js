@@ -6,7 +6,7 @@ import CartPage from '../Pages/Cart/Cart';
 import Contact from '../Pages/Contact';
 import ErrorPage from '../Pages/ErrorPage';
 import Home from '../Pages/Home';
-import ProductDetail from '../Pages/ProductDetail';
+import ProductDetail from '../Pages/ProductDetail/ProductDetail';
 function Routing() {
   return (
       <BrowserRouter>
