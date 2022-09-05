@@ -28,7 +28,7 @@ function CartPage() {
                     
                     <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                       <img src={prod.image}
-                        class="w-100" alt="Blue Jeans Jacket" />
+                        class="w-50" alt="Blue Jeans Jacket" />
                       <a href="#!">
                         <div class="mask" style={{backgroundColor: "rgba(251, 251, 251, 0.2)"}} ></div>
                       </a>
