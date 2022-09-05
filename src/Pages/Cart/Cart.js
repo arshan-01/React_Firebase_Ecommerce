@@ -23,12 +23,12 @@ function CartPage() {
           <div class="card-body Scroll" >
              {
               cartData.map((prod)=>{
-                return  <div class="row">
+                return  <div class="row"> 
                   <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                     
-                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                    <div class="bg-image  hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                       <img src={prod.image}
-                        class="w-50" alt="Blue Jeans Jacket" />
+                        class="w-50 center-cart-image " alt="Blue Jeans Jacket" />
                       <a href="#!">
                         <div class="mask" style={{backgroundColor: "rgba(251, 251, 251, 0.2)"}} ></div>
                       </a>
@@ -36,7 +36,7 @@ function CartPage() {
                   
                   </div>
     
-                  <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                  <div class="col-lg-5 col-md-6 mb-4 mb-lg-0 ">
                     
                     <p><strong>{prod.title}</strong></p>
                     <p>Color: blue</p>
@@ -61,7 +61,7 @@ function CartPage() {
                       </button>
     
                       <div class="form-outline">
-                        <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                        <input id="form1" min="1" name="quantity" value="1" type="number" class="form-control" />
                         <label class="form-label" for="form1">Quantity</label>
                       </div>
     
@@ -83,25 +83,7 @@ function CartPage() {
              
               </div> 
             </div>
-            <div class="card mb-4">
-              <div class="card-body">
-                <p><strong>Expected shipping delivery</strong></p>
-                <p class="mb-0">12.10.2020 - 14.10.2020</p>
-              </div>
-            </div>
-            <div class="card mb-4 mb-lg-0">
-              <div class="card-body">
-                <p><strong>We accept</strong></p>
-                <img class="me-2" width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                  alt="Visa" />
-               
-                <img class="me-2" width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                  alt="Mastercard" />
-               
-              </div>
-            </div>
+          
           </div>
           <div class="col-md-4 ">
             <div class="card mb-4  ">
@@ -134,6 +116,27 @@ function CartPage() {
                 <button type="button" class="btn btn-primary btn-lg btn-block">
                   Go to checkout
                 </button>
+                
+              </div>
+              
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <p><strong>Expected shipping delivery</strong></p>
+                <p class="mb-0">12.10.2020 - 14.10.2020</p>
+              </div>
+            </div>
+            <div class="card mb-4 mb-lg-0">
+              <div class="card-body">
+                <p><strong>We accept</strong></p>
+                <img class="me-2" width="45px"
+                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                  alt="Visa" />
+               
+                <img class="me-2" width="45px"
+                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                  alt="Mastercard" />
+               
               </div>
             </div>
           </div>

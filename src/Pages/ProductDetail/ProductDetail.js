@@ -6,6 +6,7 @@ import {  message } from 'antd';
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { ADD, REMOVE } from '../../Redux/actions/Action'
+import Header from '../../components/Header';
 function ProductDetail() {
   let product = useSelector((state)=>state.CartReducer.products);
   let cartData = useSelector((state)=>state.CartReducer.cart);
@@ -26,7 +27,8 @@ function ProductDetail() {
   const dispatch = useDispatch()
   return (
     <div >
-       <div class="container mt-5 mb-5" >
+    <Header title="Product Detail" />
+       <div class="container mt-5 " >
       <div class="card" style={{ backgroundColor:"#ffff" }}>
         <div class="row g-0">
           <div class="col-md-6 border-end">
@@ -115,6 +117,7 @@ function ProductDetail() {
         </div>
       </div>
     </div>
+    
     </div>
 );
 }

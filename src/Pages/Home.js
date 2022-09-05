@@ -1,14 +1,13 @@
 import ProductCard from '../components/ProductCard/ProductCard';
 
-// import Hero from '../components/Hero'
+import Hero from '../components/Hero'
 
 function Home() {
 //  console.log(products)
   return (
     <div>
-    {/* <Hero/> */}
+    <Hero/>
    <ProductCard/>
-
     </div>
   )
 }
