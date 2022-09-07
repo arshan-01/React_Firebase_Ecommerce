@@ -133,3 +133,8 @@ a
     cursor: pointer;
     color: #fbb72c;
 }
+
+.ant-message {
+    bottom: initial;
+    top: 60px;
+  }
