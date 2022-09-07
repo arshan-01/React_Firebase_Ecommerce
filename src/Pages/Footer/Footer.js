@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import ShopLogo from '../../assets/ShopLogo.png'
+import { FacebookFilled ,TwitterSquareFilled,InstagramFilled  } from '@ant-design/icons';
 const Footer = () => {
     let year = new Date().getFullYear()
   return (
@@ -13,7 +15,7 @@ const Footer = () => {
               <div class="footer__about">
                 <div class="footer__logo">
                   <Link to="/">
-                    <img src="img/logo.png" alt="" />
+                    <img src={ShopLogo}  height="50" width="120" alt=" ShopLogo" loading="lazy" />
                   </Link>
                 </div>
                 <p>
@@ -22,20 +24,16 @@ const Footer = () => {
                 </p>
                 <div class="footer__payment">
                   <Link to="#">
-                    <img src="img/payment/payment-1.png" alt="" />
+                  <img class="me-2" width="45px"
+                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                  alt="Visa" />
                   </Link>
                   <Link to="#">
-                    <img src="img/payment/payment-2.png" alt="" />
+                  <img class="me-2" width="45px"
+                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                  alt="Mastercard" />
                   </Link>
-                  <Link to="#">
-                    <img src="img/payment/payment-3.png" alt="" />
-                  </Link>
-                  <Link to="#">
-                    <img src="img/payment/payment-4.png" alt="" />
-                  </Link>
-                  <Link to="#">
-                    <img src="img/payment/payment-5.png" alt="" />
-                  </Link>
+                  
                 </div>
               </div>
             </div>
@@ -88,19 +86,13 @@ const Footer = () => {
                 </form>
                 <div class="footer__social">
                   <Link to="#">
-                    <i class="fa fa-facebook"></i>
+                  <FacebookFilled />
                   </Link>
                   <Link to="#">
-                    <i class="fa fa-twitter"></i>
+                  <TwitterSquareFilled />
                   </Link>
                   <Link to="#">
-                    <i class="fa fa-youtube-play"></i>
-                  </Link>
-                  <Link to="#">
-                    <i class="fa fa-instagram"></i>
-                  </Link>
-                  <Link to="#">
-                    <i class="fa fa-pinterest"></i>
+                  <InstagramFilled />
                   </Link>
                 </div>
               </div>

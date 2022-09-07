@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import { Button, Result } from 'antd';
 export default function ErrorPage() {
   return (
-    <div>
+    <div className='mt-5'> 
 
 <Result
     status="404"

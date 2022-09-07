@@ -17,9 +17,13 @@ a
 {
     text-decoration: none;
 }
+
+.productCard-card{
+  height: 90%;
+}
 .card {
     
-    /* height: 90%; */
+  
     box-shadow: 0 2px 7px #dfdfdf;
     background: #fafafa;
 }
@@ -41,6 +45,7 @@ a
     align-items: center;
     justify-content: center;
     height: 300px;
+    width: 100%;
     padding: 50px;
     background: #f0f0f0;
 }
