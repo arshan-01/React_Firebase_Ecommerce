@@ -1,7 +1,5 @@
 import * as action from "./actionType";
 
-
-
 export const FETCH_PRODUCT = (fetchproducts)=>{
         return {
             type : action.FETCH_PRODUCT,
@@ -15,10 +13,29 @@ export const ADD = (products)=>{
             payload : products,
         }
 }
+
+
 export const REMOVE = (id)=>{
-    console.log(id)
+    // console.log(id)
         return {
             type : action.REMOVE_TO_CART,
             payload : id,
+        }
+}
+
+// INCREAMENT_QTY
+export const INCREAMENT = (payload)=>{
+    console.log(payload)
+    return {
+        type : action.INCREAMENT_QTY,
+        payload 
+    }
+}
+// DECREAMENT_QTY
+export const DECREAMENT = (payload)=>{
+    // console.log(id)
+        return {
+            type : action.DECREAMENT_QTY,
+            payload 
         }
 }

@@ -34,12 +34,12 @@ function ProductDetail() {
           <div class="col-md-6 border-end">
             <div class="d-flex flex-column justify-content-center">
               <div class="main_image">
-                <img src={data.image} id="main_product_image" style={{ width:"200px"}}/>
+                <img src={data.image} id="main_product_image" style={{ width:"200px"}} alt={data.title}/>
               </div>
               <div class="thumbnail_images" >
                 <ul id="thumbnail">
                   <li>
-                    <img src={data.image} style={{ width:"30px"}}/>
+                    <img src={data.image} style={{ width:"30px"}} alt={data.title}/>
                   </li>
                   
                 </ul>

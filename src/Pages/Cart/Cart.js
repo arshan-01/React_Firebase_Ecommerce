@@ -1,13 +1,15 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { REMOVE } from '../../Redux/actions/Action';
+import { REMOVE,INCREAMENT, DECREAMENT } from '../../Redux/actions/Action';
 
 import "./cart.css"
 
 function CartPage() {
   let cartData = useSelector((state)=>state.CartReducer.cart);
-  console.log(cartData)
+  let TotalBill = cartData.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)
+  // let qty = useSelector((state)=>state.CartReducer.qty);
+  // console.log(qty)
   const dispatch = useDispatch()
   return (
    
@@ -23,6 +25,7 @@ function CartPage() {
           <div class="card-body Scroll" >
              {
               cartData.map((prod)=>{
+                {/* console.log(prod.qty) */}
                 return  <div class="row"> 
                   <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                     
@@ -56,23 +59,24 @@ function CartPage() {
                
                     <div class="d-flex mb-4" style={{maxWidth: "300px" }}>
                       <button class="btn btn-primary px-3 me-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        onClick={()=> dispatch(DECREAMENT(prod))}>
                         <i class="fas fa-minus"></i>
                       </button>
     
                       <div class="form-outline">
-                        <input id="form1" min="1" name="quantity" value="1" type="number" class="form-control" />
-                        <label class="form-label" for="form1">Quantity</label>
+                        <input id="form1" min="1" name="quantity" value={prod.qty} class="form-control" />
+                        {/* <label class="form-label" for="form1">Quantity</label> */}
                       </div>
     
-                      <button class="btn btn-primary px-3 ms-2"
-                        >
-                        <i class="fas fa-plus"></i>
+                      <button class="btn btn-primary px-3 ms-2" onClick={()=> dispatch(INCREAMENT(prod))}>
+                        <i  class="fas fa-plus"></i>
                       </button>
                     </div>
 
                     <p class="text-start text-md-center">
-                      <strong>${prod.price}</strong>
+                    <span>{prod.qty} X ${prod.price.toFixed(2)} = </span>
+                      <strong>${(prod.qty*prod.price).toFixed(2)}</strong>
+                      
                     </p>
                   </div>
                   <hr class="my-4"/>
@@ -95,12 +99,13 @@ function CartPage() {
                   <li
                     class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                     Products
-                    <span>$53.98</span>
+                    <span>{cartData.length}</span>
                   </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                  
+                  {/* <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                     Shipping
                     <span>Gratis</span>
-                  </li>
+                  </li> */}
                   <li
                     class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                     <div>
@@ -109,7 +114,8 @@ function CartPage() {
                         <p class="mb-0">(including VAT)</p>
                       </strong>
                     </div>
-                    <span><strong>$53.98</strong></span>
+                    
+                    <span><strong>${TotalBill}</strong></span>
                   </li>
                 </ul>
     

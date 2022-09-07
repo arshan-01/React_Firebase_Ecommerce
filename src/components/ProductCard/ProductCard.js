@@ -7,7 +7,7 @@ import "./ProductCard.css";
 function ProductCard() {
   let products = useSelector((state) => state.CartReducer.products);
   let cartData = useSelector((state) => state.CartReducer.cart);
-  console.log(cartData);
+  console.log(products);
 
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ function ProductCard() {
           return (
             <div class=" col-6 col-sm-6 col-md-4 col-lg-3 " key={prod.id}>
               <div class="card mt-5 productCard-card">
-                <div class="card-badge">Hot</div>
+                <div class="card-badge">Sale</div>
                 <div class="product-tumb">
                 <Image
                     // width={200}

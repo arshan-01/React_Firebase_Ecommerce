@@ -1,3 +1,5 @@
 export const ADD_TO_CART = "ADD_TO_CART"
 export const REMOVE_TO_CART = "REMOVE_TO_CART"
 export const FETCH_PRODUCT = "FETCH_PRODUCT";
+export const INCREAMENT_QTY = "INCREAMENT_QTY";
+export const DECREAMENT_QTY = "DECREAMENT_QTY";

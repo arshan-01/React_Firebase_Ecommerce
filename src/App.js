@@ -20,6 +20,10 @@ function App() {
               const res = await axios.get("https://fakestoreapi.com/products");
               if (res.status === 200) {
                 setloading(false)
+                // let new_array=res.data.map(function(ele){
+       
+                //     return {...ele,qty:1};
+                //   })
                   dispatch(FETCH_PRODUCT(res.data));
               }
           } catch (error) {
