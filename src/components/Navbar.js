@@ -1,17 +1,52 @@
 import React from 'react'
 import {  useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { useState ,useEffect} from 'react';
+import { Link ,useNavigate} from 'react-router-dom'
 import ShopLogo from '../assets/ShopLogo.png'
+import { onAuthStateChanged, signOut  } from "firebase/auth";
+import { collection, getDocs } from "firebase/firestore/lite"; 
+import {auth} from "../Pages/FirebaseAuthentication/Firebase"
+import { firestore_db} from "../Pages/FirebaseAuthentication/Firebase";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar() {
+  
+  const [User,setUser] = useState(null)
+  // const [First,setFirst] = useState(null)
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+
+        // firestore_db.collection('users').doc(user.id).get()
+        // .then(snapshot => {console.log(snapshot)})
+//         const querySnapshot = getDocs(collection(firestore_db, "users"));
+// querySnapshot.forEach((doc) => {
+//   console.log(`${doc.uid} => ${doc.data()}`);
+// });
 
 
+      
+      } else {
+        console.log("User is signed out")
+      }
+    });
+    
+  }, [])
+  
+  
   let cartData = useSelector((state)=>state.CartReducer.cart);
- 
-
+  function LogoutHandle() {
+    signOut(auth);
+    navigate('/');
+    setUser(null);
+  }
+  // console.log(First)
   return (
-    <div>
-<nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div className='mb-8'>
+<nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
 
   <div className="container">
     
@@ -54,18 +89,19 @@ function Navbar() {
         </li>
       </ul>
      
-    </div>
-   
-    <div className="d-flex align-items-center">
-    <div class="input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+    <div class="input-group rounded w-50">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
   <span class="input-group-text border-0" id="search-addon">
     <i class="fas fa-search"></i>
   </span>
 </div>
+<br/>
+    </div>
+   
+    <div className="d-flex align-items-center">
      
       <Link className="text-reset me-3" to="/cart">
-        <i className="fas fa-shopping-cart"></i>
+      <ShoppingCartIcon />
         {
           cartData.length>= 1? 
         <span className="badge rounded-pill badge-notification bg-danger">{cartData.length}</span> : <span className="badge rounded-pill badge-notification bg-danger"></span>
@@ -73,36 +109,8 @@ function Navbar() {
 
       </Link>
 
-      
+      {/* Profile Icon If user logged  */}
       {/* <div className="dropdown">
-        <Link
-          className="text-reset me-3 dropdown-toggle hidden-arrow"
-          to="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i className="fas fa-bell"></i>
-          <span className="badge rounded-pill badge-notification bg-danger">1</span>
-        </Link>
-        <ul
-          className="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <Link className="dropdown-item" to="#">Some news</Link>
-          </li>
-          <li>
-            <Link className="dropdown-item" to="#">Another news</Link>
-          </li>
-          <li>
-            <Link className="dropdown-item" to="#">Something else here</Link>
-          </li>
-        </ul>
-      </div>
-      
-      <div className="dropdown">
         <Link
           className="dropdown-toggle d-flex align-items-center hidden-arrow"
           to="#"
@@ -124,17 +132,33 @@ function Navbar() {
           aria-labelledby="navbarDropdownMenuAvatar"
         >
           <li>
-            <Link className="dropdown-item" to="#">My profile</Link>
+            <Link className="dropdown-item" to="/Login">Log In</Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="#">Settings</Link>
+            <Link className="dropdown-item" to="/Register">Sign up</Link>
           </li>
-          <li>
-            <Link className="dropdown-item" to="#">Logout</Link>
-          </li>
+          
         </ul>
-      </div> */}
+      </div>  */}
+{/* Profile Icon If user logged  */}
+
+
+  {User ?<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
+    My Account
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+  <Link to='/Profile'> <li><button class="dropdown-item" type="button">My Profile </button></li></Link>
+  <Link to="/"><li><button onClick={LogoutHandle} class="dropdown-item" type="button">Sign out</button></li></Link>
+  </ul> 
     </div>
+  :<div>
+   <Link to='/Login'><button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Log In</button></Link>
+   <Link to="/Register"><button type="button" class="btn btn-primary ms-2">Register</button></Link>
+   </div>
+  }
+</div>
+
     
   </div>
   

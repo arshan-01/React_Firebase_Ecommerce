@@ -17,7 +17,7 @@ function ProductDetail() {
   const [data ,setdata] = useState([]);
   const compare = ()=>{
       let singledata = product.filter((e)=> e.id === id);
-    setdata(singledata[0]);
+     setdata(singledata[0]);
    
   }
 

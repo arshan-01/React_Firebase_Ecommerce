@@ -3,7 +3,6 @@ import * as actions from "../actions/actionType"
 const InitialState = {
     cart : [],
     products : [],
-    total:0,
 }
 export const CartReducer = (state = InitialState, action)=>{
     switch (action.type) {

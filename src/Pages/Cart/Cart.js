@@ -118,10 +118,11 @@ function CartPage() {
                     <span><strong>${TotalBill}</strong></span>
                   </li>
                 </ul>
-    
+                  <Link to="/Checkout">
                 <button type="button" class="btn btn-primary btn-lg btn-block">
                   Go to checkout
                 </button>
+                </Link>
                 
               </div>
               

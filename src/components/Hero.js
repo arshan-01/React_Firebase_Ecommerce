@@ -30,7 +30,7 @@ function Hero() {
   <div class="carousel-inner mt-3">
     <div class="carousel-item active">
     <div class="container">
-      <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape"/>
+      <img src="https://mdbcdn.b-cdn./img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape"/>
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>

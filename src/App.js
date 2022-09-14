@@ -27,7 +27,7 @@ function App() {
                   dispatch(FETCH_PRODUCT(res.data));
               }
           } catch (error) {
-              console.log(error.message);
+            console.log(error.message);
           }
       };
       unsub();
