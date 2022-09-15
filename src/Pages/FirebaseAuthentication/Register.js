@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import {auth} from "../FirebaseAuthentication/Firebase"
 import { setDoc,doc } from "firebase/firestore/lite"; 
 import { firestore_db } from '../FirebaseAuthentication/Firebase';
@@ -45,6 +45,7 @@ const handleSubmit = async (e) => {
 .then((userCredential) => {
   // Signed in 
   const user = userCredential.user;
+   updateProfile(auth.currentUser, { displayName: fname,});
   console.log("Successfull")
   console.log("user",user)
   ADDDATA(auth.currentUser.uid);
@@ -61,8 +62,9 @@ const handleSubmit = async (e) => {
     }
   };
 
-  const ADDDATA = (id)=>{
-    const docRef =  setDoc(doc(firestore_db, "users",id),{id,fname,sname,email,password});
+  const ADDDATA = async(id)=>{
+    const docRef =  await setDoc(doc(firestore_db, "users",id),{id,fname,sname,email,password});
+   
     console.log("Document written with ID: ", id);
     setIsProcessing(false);
     navigate('/');

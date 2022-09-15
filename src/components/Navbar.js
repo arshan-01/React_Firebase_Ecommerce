@@ -4,37 +4,27 @@ import { useState ,useEffect} from 'react';
 import { Link ,useNavigate} from 'react-router-dom'
 import ShopLogo from '../assets/ShopLogo.png'
 import { onAuthStateChanged, signOut  } from "firebase/auth";
-import { getDoc,doc } from "firebase/firestore/lite"; 
+
 import {auth} from "../Pages/FirebaseAuthentication/Firebase"
-import { firestore_db} from "../Pages/FirebaseAuthentication/Firebase";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar() {
   
   const [User,setUser] = useState(null)
-  const [UserId,setUserId] = useState(null)
-  // const [Users,setUsers] = useState([])
-
+ 
   const navigate = useNavigate();
   // const AllUser =[];
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // setUserId(user.uid)
-        Fetch_Doc(); 
+        setUser(user)
+        console.log(user)
        } else {
        
         console.log("User is signed out")
       }});
   }, [])
-  
-  const Fetch_Doc = async()=>{
-    const ref = doc(firestore_db, "users", auth.currentUser.uid);
-    const userDoc = await getDoc(ref);
-   
-    setUser(userDoc.data())
-    };
     console.log(User)
 
   let cartData = useSelector((state)=>state.CartReducer.cart);
@@ -117,7 +107,7 @@ function Navbar() {
   {User ?<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
     {/* My Account */}
-    {User&&User.fname}
+    {User&&User.displayName}
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
   <Link to='/Profile'> <li><button class="dropdown-item" type="button">My Profile </button></li></Link>
