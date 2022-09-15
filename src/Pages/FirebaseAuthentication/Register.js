@@ -36,22 +36,18 @@ export default function SignUp() {
     
   }
 
+  const {fname,sname,email,password} = Input
 const handleSubmit = async (e) => {
   e.preventDefault();
   setIsProcessing(true);
     try {
-  const {fname,sname,email,password} = Input
   await createUserWithEmailAndPassword(auth,email,password)
 .then((userCredential) => {
   // Signed in 
   const user = userCredential.user;
   console.log("Successfull")
   console.log("user",user)
-      const id = auth.currentUser.uid
-          const docRef =  setDoc(doc(firestore_db, "users",id),{id,fname,sname,email,password});
-          console.log("Document written with ID: ", docRef);
-          setIsProcessing(false);
-          navigate('/');
+  ADDDATA(auth.currentUser.uid);
 })
 
 .catch((error) => {
@@ -59,13 +55,18 @@ const handleSubmit = async (e) => {
   // const errorMessage = error.message;
   console.error(error)
 });
-
     }
-    
     catch (e) {
       console.error("Error adding document: ", e);
     }
   };
+
+  const ADDDATA = (id)=>{
+    const docRef =  setDoc(doc(firestore_db, "users",id),{id,fname,sname,email,password});
+    console.log("Document written with ID: ", id);
+    setIsProcessing(false);
+    navigate('/');
+  }
 // console.log(Input)
   return (
     <ThemeProvider theme={theme}>

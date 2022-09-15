@@ -21,9 +21,10 @@ function Navbar() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserId(user.uid)
+        // setUserId(user.uid)
         Fetch_Doc(); 
        } else {
+       
         console.log("User is signed out")
       }});
   }, [])
@@ -31,22 +32,17 @@ function Navbar() {
   const Fetch_Doc = async()=>{
     const ref = doc(firestore_db, "users", auth.currentUser.uid);
     const userDoc = await getDoc(ref);
+   
     setUser(userDoc.data())
     };
     console.log(User)
-    // compare();
- 
-// const compare = ()=>{  
-//   let filterUser = Users.filter((x) => x.id === UserId);
-//      setUser(filterUser[0]);
-//   }
 
   let cartData = useSelector((state)=>state.CartReducer.cart);
   
   function LogoutHandle() {
     signOut(auth);
-    navigate('/');
     setUser(null)
+    navigate('/');
   }
 
 
@@ -116,39 +112,6 @@ function Navbar() {
         }
 
       </Link>
-
-      {/* Profile Icon If user logged  */}
-      {/* <div className="dropdown">
-        <Link
-          className="dropdown-toggle d-flex align-items-center hidden-arrow"
-          to="#"
-          id="navbarDropdownMenuAvatar"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-            className="rounded-circle"
-            height="25"
-            alt="Black and White Portrait of a Man"
-            loading="lazy"
-          />
-        </Link>
-        <ul
-          className="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuAvatar"
-        >
-          <li>
-            <Link className="dropdown-item" to="/Login">Log In</Link>
-          </li>
-          <li>
-            <Link className="dropdown-item" to="/Register">Sign up</Link>
-          </li>
-          
-        </ul>
-      </div>  */}
-{/* Profile Icon If user logged  */}
 
 
   {User ?<div class="dropdown">

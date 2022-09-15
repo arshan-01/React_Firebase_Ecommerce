@@ -49,9 +49,10 @@ export default function SignIn() {
 
   })
   .catch((error) => {
+    alert(error)
+    navigate('/Register');
     // const errorCode = error.code;
     // const errorMessage = error.message;
-    console.error(error)
   });
      
 }
