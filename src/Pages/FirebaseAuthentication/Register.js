@@ -22,6 +22,7 @@ const theme = createTheme();
 
 
 export default function SignUp() {
+  const [IsProcessing,setIsProcessing] = useState(false)
   const navigate = useNavigate();
   const [Input,setInput] = useState({
     fname: "",
@@ -37,7 +38,7 @@ export default function SignUp() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
+  setIsProcessing(true);
     try {
   const {fname,sname,email,password} = Input
   await createUserWithEmailAndPassword(auth,email,password)
@@ -49,6 +50,7 @@ const handleSubmit = async (e) => {
       const id = auth.currentUser.uid
           const docRef =  setDoc(doc(firestore_db, "users",id),{id,fname,sname,email,password});
           console.log("Document written with ID: ", docRef);
+          setIsProcessing(false);
           navigate('/');
 })
 
@@ -64,7 +66,7 @@ const handleSubmit = async (e) => {
       console.error("Error adding document: ", e);
     }
   };
-console.log(Input)
+// console.log(Input)
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -140,7 +142,11 @@ console.log(Input)
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+
+        { !IsProcessing? "Sign Up" : "Loading..."   }
+
+
+              
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>

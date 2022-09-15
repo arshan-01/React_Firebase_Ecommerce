@@ -20,7 +20,7 @@ const theme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate();
-
+  const [IsProcessing,setIsProcessing] = useState(false)
   
   const [Input,setInput] = useState({
     email: "",
@@ -36,6 +36,7 @@ export default function SignIn() {
 
 
   function SignIn() {
+    setIsProcessing(true);
   const {email,password} = Input;
   signInWithEmailAndPassword(auth,email,password)
   .then((userCredential) => {
@@ -43,6 +44,7 @@ export default function SignIn() {
     const user = userCredential.user;
     console.log("SIgn in Successfull")
     console.log("user",user)
+    setIsProcessing(false);
     navigate('/');
 
   })
@@ -103,7 +105,8 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+             { !IsProcessing? "Sign In" : "Loading..."   }
+          
             </Button>
             <Grid container>
               <Grid item xs>

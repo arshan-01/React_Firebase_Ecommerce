@@ -28,13 +28,13 @@ function Hero() {
     ></button>
   </div>
   <div class="carousel-inner mt-3">
-    <div class="carousel-item active">
+  <div class="carousel-item active">
     <div class="container">
-      <img src="https://mdbcdn.b-cdn./img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape"/>
+      <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100" alt="Camera"/>
       </div>
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
     <div class="carousel-item">

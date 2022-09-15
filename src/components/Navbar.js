@@ -4,7 +4,7 @@ import { useState ,useEffect} from 'react';
 import { Link ,useNavigate} from 'react-router-dom'
 import ShopLogo from '../assets/ShopLogo.png'
 import { onAuthStateChanged, signOut  } from "firebase/auth";
-import { collection, getDocs } from "firebase/firestore/lite"; 
+import { getDoc,doc } from "firebase/firestore/lite"; 
 import {auth} from "../Pages/FirebaseAuthentication/Firebase"
 import { firestore_db} from "../Pages/FirebaseAuthentication/Firebase";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -12,38 +12,46 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 function Navbar() {
   
   const [User,setUser] = useState(null)
-  // const [First,setFirst] = useState(null)
+  const [UserId,setUserId] = useState(null)
+  // const [Users,setUsers] = useState([])
+
   const navigate = useNavigate();
+  // const AllUser =[];
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user);
-
-        // firestore_db.collection('users').doc(user.id).get()
-        // .then(snapshot => {console.log(snapshot)})
-//         const querySnapshot = getDocs(collection(firestore_db, "users"));
-// querySnapshot.forEach((doc) => {
-//   console.log(`${doc.uid} => ${doc.data()}`);
-// });
-
-
-      
-      } else {
+        setUserId(user.uid)
+        Fetch_Doc(); 
+       } else {
         console.log("User is signed out")
-      }
-    });
-    
+      }});
   }, [])
   
-  
+  const Fetch_Doc = async()=>{
+    const ref = doc(firestore_db, "users", auth.currentUser.uid);
+    const userDoc = await getDoc(ref);
+    setUser(userDoc.data())
+    };
+    console.log(User)
+    // compare();
+ 
+// const compare = ()=>{  
+//   let filterUser = Users.filter((x) => x.id === UserId);
+//      setUser(filterUser[0]);
+//   }
+
   let cartData = useSelector((state)=>state.CartReducer.cart);
+  
   function LogoutHandle() {
     signOut(auth);
     navigate('/');
-    setUser(null);
+    setUser(null)
   }
-  // console.log(First)
+
+
+  // console.log(UserId)
+  // console.log(User)
   return (
     <div className='mb-8'>
 <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light ">
@@ -145,7 +153,8 @@ function Navbar() {
 
   {User ?<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
-    My Account
+    {/* My Account */}
+    {User&&User.fname}
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
   <Link to='/Profile'> <li><button class="dropdown-item" type="button">My Profile </button></li></Link>
@@ -153,8 +162,8 @@ function Navbar() {
   </ul> 
     </div>
   :<div>
-   <Link to='/Login'><button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Log In</button></Link>
-   <Link to="/Register"><button type="button" class="btn btn-primary ms-2">Register</button></Link>
+   <Link to='/Login'><button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Sign In</button></Link>
+   <Link to="/Register"><button type="button" class="btn btn-primary ms-2">Sign Up</button></Link>
    </div>
   }
 </div>
