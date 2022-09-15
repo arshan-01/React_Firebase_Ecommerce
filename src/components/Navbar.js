@@ -21,13 +21,13 @@ function Navbar() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserId(user.uid)
-         
+        // setUserId(user.uid)
+        Fetch_Doc(); 
        } else {
+       
         console.log("User is signed out")
       }});
-      Fetch_Doc();
-  }, [UserId])
+  }, [])
   
   const Fetch_Doc = async()=>{
     const ref = doc(firestore_db, "users", auth.currentUser.uid);
